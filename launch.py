@@ -15,8 +15,8 @@ import sys, os
 PORT = 8000
 #HTML_FILE = "photo_map.html"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-HTML_FILE = os.path.join(BASE_DIR, "photo_map.html")
-
+#HTML_FILE = os.path.join(BASE_DIR, "photo_map.html")
+HTML_FILE = "photo_map.html"
 
 
 def start_server_and_open_map():
