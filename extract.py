@@ -1,5 +1,7 @@
 """
 'extract.py'
+Extract GPS data from field observation images
+and store in CSV file
 author: Dr. Hakim Mitiche
 update: Jan. 2026
 """
@@ -9,8 +11,15 @@ from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
 
 # -------- SETTINGS --------
-IMAGE_FOLDER = "images"          # Folder with pictures
-OUTPUT_CSV = "photo_metadata.csv"
+INSECTA_IMAGE_FOLDER = "images_insects"          # Folder with pictures
+FLORA_IMAGE_FOLDER = "images_flora"
+FUNGUS_IMAGES_FOLDER = "images_fungus"
+INSECTA_OUTPUT_CSV = "insecta_metadata.csv"
+FLORA_OUTPUT_CSV = "flora_metadata.csv"
+ORANGE = "\033[33m"
+RESET = "\033[0m"
+WARNING_ICON = "⚠️"
+
 
 # -------- HELPER FUNCTIONS --------
 def to_float(x):
@@ -48,9 +57,6 @@ def get_gps_data(exif_data):
 
 
 def dms_to_decimal(dms, ref):
-    def to_float(x):
-        return float(x)
-
     degrees = to_float(dms[0])
     minutes = to_float(dms[1])
     seconds = to_float(dms[2])
@@ -71,114 +77,194 @@ def dms_string(dms, ref):
     return f"{d}°{m}'{s}\" {ref}"
 
 
+def already_processed_images(output_csv):
+    # find already processed images (in output_csv file)
+    processed_images = set()
+    # check in the images metadata collection CSV file
+    file_exists = os.path.exists(output_csv)
+    if file_exists:
+        with open(output_csv, newline="", mode="r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                processed_images.add(row["picture_name"])
 
-# -------- MAIN PROCESS --------
+    print(f"[info] Already processed images: {len(processed_images)}")
+    return processed_images
 
-# find already processed images (in OUTPUT_CSV file)
-processed_images = set()
+def collect_images_gps(images_folder, processed_images):
+    # browse new images and collect GPS data
+    rows = []
+    gps_count = 0
+    for file_name in os.listdir(images_folder):
+        
+        # skip files other then pictures
+        if not file_name.lower().endswith((".jpg", ".jpeg", ".png")):
+            print(f"{ORANGE}{WARNING_ICON}Skipping not supported file: '{file_name}'{RESET}")
+            continue
 
-# check in the images metadata collection CSV file
-file_exists = os.path.exists(OUTPUT_CSV)
-if file_exists:
-    with open(OUTPUT_CSV, newline="", mode="r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            processed_images.add(row["picture_name"])
+        # skip previously handled pictures
+        if file_name in processed_images:
+            print("[info] Skipping old image: ", file_name)
+            continue
 
-print(f"[info] Already processed images: {len(processed_images)}")
+        # handle new images    
+        print("[info] Processing: ", file_name, " ...")
+        file_path = os.path.join(images_folder, file_name)
 
-rows = []
+        try:
+            img = Image.open(file_path)
+            exif_data = get_exif_data(img)
+            gps_data = get_gps_data(exif_data)
+            img.close()
 
-# browse new images and collect GPS data
-for file_name in os.listdir(IMAGE_FOLDER):
-    
-    # skip files other then pictures
-    if not file_name.lower().endswith((".jpg", ".jpeg", ".png")):
-        continue
+            # Default values
+            latitude_dms = ""
+            longitude_dms = ""
+            altitude = ""
+            date = ""
+            hour = ""
 
-    # skip previously handled pictures
-    if file_name in processed_images:
-        print("[info] Skipping old image: ", file_name)
-        continue
+            # --- Date & Time ---
+            datetime = exif_data.get("DateTime", "")
+            if datetime:
+                parts = datetime.split(" ")
+                date = parts[0].replace(":", "-")
+                hour = parts[1]
 
-    # handle new images    
-    print("[info] Processing: ", file_name, " ...")
-    file_path = os.path.join(IMAGE_FOLDER, file_name)
+            # --- GPS ---
+            if gps_data:
+                lat = gps_data.get("GPSLatitude")
+                lat_ref = gps_data.get("GPSLatitudeRef")
+                lon = gps_data.get("GPSLongitude")
+                lon_ref = gps_data.get("GPSLongitudeRef")
 
-    try:
-        img = Image.open(file_path)
-        exif_data = get_exif_data(img)
-        gps_data = get_gps_data(exif_data)
+                if lat and lon:
+                    latitude_dms = dms_string(lat, lat_ref)
+                    longitude_dms = dms_string(lon, lon_ref)
+                    gps_count += 1
+                else:
+                    print(f"{ORANGE}{WARNING_ICON} Missing GPS coordinates in: {file_name}{RESET}")
 
-        # Default values
-        latitude_dms = ""
-        longitude_dms = ""
-        altitude = ""
-        date = ""
-        hour = ""
+                alt = gps_data.get("GPSAltitude")
+                alt_ref = gps_data.get("GPSAltitudeRef", 0)
 
-        # --- Date & Time ---
-        datetime = exif_data.get("DateTime", "")
-        if datetime:
-            parts = datetime.split(" ")
-            date = parts[0].replace(":", "-")
-            hour = parts[1]
+                if alt is not None:
+                    altitude = round(to_float(alt), 2)
+                    if alt_ref == 1:
+                        altitude = -altitude
+                else:
+                    print(f"{ORANGE}{WARNING_ICON} Missing altitude in: {file_name}{RESET}")
 
-        # --- GPS ---
-        if gps_data:
-            lat = gps_data.get("GPSLatitude")
-            lat_ref = gps_data.get("GPSLatitudeRef")
-            lon = gps_data.get("GPSLongitude")
-            lon_ref = gps_data.get("GPSLongitudeRef")
+            else:
+                print(f"{ORANGE}{WARNING_ICON} No GPS metadata found in: {file_name}{RESET}")
 
-            if lat and lon:
-                latitude_dms = dms_string(lat, lat_ref)
-                longitude_dms = dms_string(lon, lon_ref)
+            gps_string = f"{latitude_dms}, {longitude_dms}"
+            # for debugging
+            #print("[info] file_name, type(lat), lat)
 
-            alt = gps_data.get("GPSAltitude")
-            alt_ref = gps_data.get("GPSAltitudeRef", 0)
+            rows.append([
+                file_name,
+                date,
+                hour,
+                "",                  # note column left empty
+                gps_string,
+                altitude
+            ])
 
-            if alt is not None:
-                altitude = round(to_float(alt),2)
-                if alt_ref == 1:
-                    altitude = -altitude
+        except Exception as e:
+            print(f"Skipping image '{file_name}'': {e}")
+    print("[summary] Rows collected:", len(rows), " gps extracted: ", gps_count)
+    return rows    
 
+def write_output(output_csv, rows):
+    """
+    Save collected GPS data to CSV file
+    """
+    file_exists = os.path.exists(output_csv)
+    with open(output_csv, mode="a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        # write cvs header (columns labels) only if the file is new
+        if not file_exists:
+            writer.writerow([
+                "picture_name",
+                "date",
+                "hour",
+                "note",
+                "GPS coordinates (DMS)",
+                "altitude"
+            ])
 
-        gps_string = f"{latitude_dms}, {longitude_dms}"
-        # for debugging
-        #print("[info] file_name, type(lat), lat)
+        writer.writerows(rows)
 
-        rows.append([
-            file_name,
-            date,
-            hour,
-            "",                  # note column left empty
-            gps_string,
-            altitude
-        ])
-
-    except Exception as e:
-        print(f"Skipping {file_name}: {e}")
-
-
-# -------- WRITE CSV --------
-
-with open(OUTPUT_CSV, mode="a", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    # write cvs header (columns labels) only if the file is new
     if not file_exists:
-        writer.writerow([
-            "picture_name",
-            "date",
-            "hour",
-            "note",
-            "GPS coordinates (DMS)",
-            "altitude"
+        print("[info] CSV file created: ", output_csv)
+    else:
+        print("[info] CSV file updated: ", output_csv)
+
+def main():
+    """
+    main function
+    """
+
+    print("\n===== GPS METADATA EXTRACTION STARTED =====\n")
+
+    # ---------- INSECTA ----------
+
+    if os.path.exists(INSECTA_IMAGE_FOLDER):
+
+        print(f"[info] Processing insect images...")
+        print(f"{INSECTA_IMAGE_FOLDER}, files: ")
+        total_images = len([
+             f for f in os.listdir(INSECTA_IMAGE_FOLDER)
+             if f.lower().endswith((".jpg", ".jpeg", ".png"))
         ])
+        print(f"[info] Total insect images found: {total_images}")
 
-    writer.writerows(rows)
 
-if not file_exists:
-    print("[info] CSV file created:", OUTPUT_CSV)
-else:
-    print("[info] CSV file updated:", OUTPUT_CSV)
+        processed_insects = already_processed_images(INSECTA_OUTPUT_CSV)
+
+        insect_rows = collect_images_gps(
+            INSECTA_IMAGE_FOLDER,
+            processed_insects
+        )
+        print(f"[summary] New insect images processed: {len(insect_rows)}")
+        if insect_rows:
+            write_output(INSECTA_OUTPUT_CSV, insect_rows)
+        else:
+            print("[info] No new insect images found!")
+
+    else:
+        print("[warning] Insect images folder not found.")
+
+
+    # ---------- FLORA ----------
+
+    if os.path.exists(FLORA_IMAGE_FOLDER):
+
+        print("\n[info] Processing flora images...")
+        total_images = len([
+            f for f in os.listdir(FLORA_IMAGE_FOLDER)
+            if f.lower().endswith((".jpg", ".jpeg", ".png"))
+        ])
+        print(f"[info] Total flora images found: {total_images}")
+        processed_flora = already_processed_images(FLORA_OUTPUT_CSV)
+
+        flora_rows = collect_images_gps(
+            FLORA_IMAGE_FOLDER,
+            processed_flora
+        )
+        print(f"[summary] New flora images processed: {len(flora_rows)}")
+        if flora_rows:
+            write_output(FLORA_OUTPUT_CSV, flora_rows)
+        else:
+            print("[info] No new flora images found.")
+
+    else:
+        print("[warning] Flora image folder not found.")
+
+
+
+    print("\n===== EXTRACTION FINISHED =====\n")
+
+if __name__ == "__main__":
+    main()

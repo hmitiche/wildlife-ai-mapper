@@ -1,4 +1,7 @@
+# python third-party libraries that are required
 flask
 werkzeug
 gunicorn
-
+requests
+python-dotenv
+huggingface_hub

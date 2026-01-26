@@ -28,6 +28,7 @@ Your project folder must look like this:project/
 ---------
 ├── extract.py
 ├── map.py
+ ___ launch.py
 ├── images/
 │   ├── IMG_001.jpg
 │   ├── IMG_002.jpg

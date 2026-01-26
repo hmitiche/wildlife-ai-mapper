@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8aa18867c80410410bbed2a05f706a25 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8aa18867c80410410bbed2a05f706a25" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8aa18867c80410410bbed2a05f706a25 = L.map(
+                "map_8aa18867c80410410bbed2a05f706a25",
+                {
+                    center: [36.77081388888889, 5.8994027777777776],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 17,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_be7a2161180eaa0bbd169eb08182a37b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_be7a2161180eaa0bbd169eb08182a37b.addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var marker_ea0e86c6cbb0354b138edabe54db91a3 = L.marker(
+                [36.77081388888889, 5.8994027777777776],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_a4b55cac2feab2c825c3e6d9a6f491ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_138c4634a6b84071e646118b0d8accfe = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f11f51dd722bf2b347a4754595030f48 = $(`<div id="html_f11f51dd722bf2b347a4754595030f48" style="width: 100.0%; height: 100.0%;">     <b>IMG_2721_coucxy.jpeg</b><br>     Type: Insect<br>     Date: 2024-09-03<br>     Time: 16:20:40<br>     Latitude: 36.770814<br>     Longitude: 5.899403<br>     Altitude: 59.3 m<br>     Note: <br>              <a href="images_insects/IMG_2721_coucxy.jpeg" target="_blank">         <img src="images_insects/IMG_2721_coucxy.jpeg" width="160">         </a>              </div>`)[0];
+                popup_138c4634a6b84071e646118b0d8accfe.setContent(html_f11f51dd722bf2b347a4754595030f48);
+            
+        
+
+        marker_ea0e86c6cbb0354b138edabe54db91a3.bindPopup(popup_138c4634a6b84071e646118b0d8accfe)
+        ;
+
+        
+    
+    
+            marker_ea0e86c6cbb0354b138edabe54db91a3.bindTooltip(
+                `<div>
+                     Insect — IMG_2721_coucxy.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea0e86c6cbb0354b138edabe54db91a3.setIcon(icon_a4b55cac2feab2c825c3e6d9a6f491ab);
+            
+    
+            var marker_17318ce1d43e110dada592128c2c3e57 = L.marker(
+                [36.76595277777778, 3.052208333333333],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_acd6129aee15552d089e0c701f0a2357 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1054dd286f904bac497cde43f2e58a76 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c37f8a558c22d5565544b58bddd9d96c = $(`<div id="html_c37f8a558c22d5565544b58bddd9d96c" style="width: 100.0%; height: 100.0%;">     <b>IMG_2310_snake.jpeg</b><br>     Type: Insect<br>     Date: 2024-08-25<br>     Time: 18:28:52<br>     Latitude: 36.765953<br>     Longitude: 3.052208<br>     Altitude: 51.5 m<br>     Note: <br>              <a href="images_insects/IMG_2310_snake.jpeg" target="_blank">         <img src="images_insects/IMG_2310_snake.jpeg" width="160">         </a>              </div>`)[0];
+                popup_1054dd286f904bac497cde43f2e58a76.setContent(html_c37f8a558c22d5565544b58bddd9d96c);
+            
+        
+
+        marker_17318ce1d43e110dada592128c2c3e57.bindPopup(popup_1054dd286f904bac497cde43f2e58a76)
+        ;
+
+        
+    
+    
+            marker_17318ce1d43e110dada592128c2c3e57.bindTooltip(
+                `<div>
+                     Insect — IMG_2310_snake.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_17318ce1d43e110dada592128c2c3e57.setIcon(icon_acd6129aee15552d089e0c701f0a2357);
+            
+    
+            var marker_3d9a727279806ec345340033a7489e10 = L.marker(
+                [36.723422222222226, 3.1288694444444443],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_8fb040ffa453c2eecbe8ea00f72b12f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab667c2a6541620b30752ee64b84147e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4232fa16cedf1523dc7044d6f57e03a8 = $(`<div id="html_4232fa16cedf1523dc7044d6f57e03a8" style="width: 100.0%; height: 100.0%;">     <b>IMG_8834_UK_bug.jpeg</b><br>     Type: Insect<br>     Date: 2023-11-16<br>     Time: 10:14:23<br>     Latitude: 36.723422<br>     Longitude: 3.128869<br>     Altitude: 49.4 m<br>     Note: <br>              <a href="images_insects/IMG_8834_UK_bug.jpeg" target="_blank">         <img src="images_insects/IMG_8834_UK_bug.jpeg" width="160">         </a>              </div>`)[0];
+                popup_ab667c2a6541620b30752ee64b84147e.setContent(html_4232fa16cedf1523dc7044d6f57e03a8);
+            
+        
+
+        marker_3d9a727279806ec345340033a7489e10.bindPopup(popup_ab667c2a6541620b30752ee64b84147e)
+        ;
+
+        
+    
+    
+            marker_3d9a727279806ec345340033a7489e10.bindTooltip(
+                `<div>
+                     Insect — IMG_8834_UK_bug.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d9a727279806ec345340033a7489e10.setIcon(icon_8fb040ffa453c2eecbe8ea00f72b12f3);
+            
+    
+            var marker_d365c80f55e9c2ba50c9448015082f25 = L.marker(
+                [36.724941666666666, 5.870636111111112],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_9de2fa6bd09225487eaa7b32df66e563 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4dbaf5be15fece549ee9620b2d14ee34 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ebc6355f60ba8747ab2cf009acd09d11 = $(`<div id="html_ebc6355f60ba8747ab2cf009acd09d11" style="width: 100.0%; height: 100.0%;">     <b>cat1.jpg</b><br>     Type: Insect<br>     Date: 2024-06-23<br>     Time: 18:23:37<br>     Latitude: 36.724942<br>     Longitude: 5.870636<br>     Altitude: 53.14 m<br>     Note: <br>              <a href="images_insects/cat1.jpg" target="_blank">         <img src="images_insects/cat1.jpg" width="160">         </a>              </div>`)[0];
+                popup_4dbaf5be15fece549ee9620b2d14ee34.setContent(html_ebc6355f60ba8747ab2cf009acd09d11);
+            
+        
+
+        marker_d365c80f55e9c2ba50c9448015082f25.bindPopup(popup_4dbaf5be15fece549ee9620b2d14ee34)
+        ;
+
+        
+    
+    
+            marker_d365c80f55e9c2ba50c9448015082f25.bindTooltip(
+                `<div>
+                     Insect — cat1.jpg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d365c80f55e9c2ba50c9448015082f25.setIcon(icon_9de2fa6bd09225487eaa7b32df66e563);
+            
+    
+            var marker_112298b982a8d07559b39aa18852bda9 = L.marker(
+                [36.77077222222222, 5.899425],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_d505908381fc0115710af91e287368ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6164f7cc5cf66254e6bbe5b321dd22ec = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_94bd3f449127ef15c17ceaa73272d7b3 = $(`<div id="html_94bd3f449127ef15c17ceaa73272d7b3" style="width: 100.0%; height: 100.0%;">     <b>IMG_0272_wasp_spider.jpeg</b><br>     Type: Insect<br>     Date: 2025-09-24<br>     Time: 07:24:47<br>     Latitude: 36.770772<br>     Longitude: 5.899425<br>     Altitude: 58.0 m<br>     Note: <br>              <a href="images_insects/IMG_0272_wasp_spider.jpeg" target="_blank">         <img src="images_insects/IMG_0272_wasp_spider.jpeg" width="160">         </a>              </div>`)[0];
+                popup_6164f7cc5cf66254e6bbe5b321dd22ec.setContent(html_94bd3f449127ef15c17ceaa73272d7b3);
+            
+        
+
+        marker_112298b982a8d07559b39aa18852bda9.bindPopup(popup_6164f7cc5cf66254e6bbe5b321dd22ec)
+        ;
+
+        
+    
+    
+            marker_112298b982a8d07559b39aa18852bda9.bindTooltip(
+                `<div>
+                     Insect — IMG_0272_wasp_spider.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_112298b982a8d07559b39aa18852bda9.setIcon(icon_d505908381fc0115710af91e287368ad);
+            
+    
+            var marker_2179948cbcad0293b352bdd40ae38cd1 = L.marker(
+                [34.69296388888888, 3.1933805555555552],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_1357e425f36f646a0c14902c63bc8763 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c91e02caa30e089e4779593444b87d5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_eb823dfc536d2b1a3275701506821cb6 = $(`<div id="html_eb823dfc536d2b1a3275701506821cb6" style="width: 100.0%; height: 100.0%;">     <b>IMG_2423_ecorce_pin.JPG</b><br>     Type: Insect<br>     Date: 2026-01-12<br>     Time: 17:27:09<br>     Latitude: 34.692964<br>     Longitude: 3.193381<br>     Altitude: 1161.42 m<br>     Note: <br>              <a href="images_insects/IMG_2423_ecorce_pin.JPG" target="_blank">         <img src="images_insects/IMG_2423_ecorce_pin.JPG" width="160">         </a>              </div>`)[0];
+                popup_1c91e02caa30e089e4779593444b87d5.setContent(html_eb823dfc536d2b1a3275701506821cb6);
+            
+        
+
+        marker_2179948cbcad0293b352bdd40ae38cd1.bindPopup(popup_1c91e02caa30e089e4779593444b87d5)
+        ;
+
+        
+    
+    
+            marker_2179948cbcad0293b352bdd40ae38cd1.bindTooltip(
+                `<div>
+                     Insect — IMG_2423_ecorce_pin.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2179948cbcad0293b352bdd40ae38cd1.setIcon(icon_1357e425f36f646a0c14902c63bc8763);
+            
+    
+            var marker_4aa1ab1a1acc55dde7992540b7c8a247 = L.marker(
+                [36.77081666666667, 5.8994277777777775],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_8c914c5b3cdf12d7603a54603acbd56c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0398ace0f39459bee7c086db360cac13 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4ce3bec03b4d0e0d687cdfec2c171b84 = $(`<div id="html_4ce3bec03b4d0e0d687cdfec2c171b84" style="width: 100.0%; height: 100.0%;">     <b>IMG_2662_bug_darkgreen.jpeg</b><br>     Type: Insect<br>     Date: 2024-09-02<br>     Time: 12:33:26<br>     Latitude: 36.770817<br>     Longitude: 5.899428<br>     Altitude: 58.3 m<br>     Note: <br>              <a href="images_insects/IMG_2662_bug_darkgreen.jpeg" target="_blank">         <img src="images_insects/IMG_2662_bug_darkgreen.jpeg" width="160">         </a>              </div>`)[0];
+                popup_0398ace0f39459bee7c086db360cac13.setContent(html_4ce3bec03b4d0e0d687cdfec2c171b84);
+            
+        
+
+        marker_4aa1ab1a1acc55dde7992540b7c8a247.bindPopup(popup_0398ace0f39459bee7c086db360cac13)
+        ;
+
+        
+    
+    
+            marker_4aa1ab1a1acc55dde7992540b7c8a247.bindTooltip(
+                `<div>
+                     Insect — IMG_2662_bug_darkgreen.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4aa1ab1a1acc55dde7992540b7c8a247.setIcon(icon_8c914c5b3cdf12d7603a54603acbd56c);
+            
+    
+            var marker_0baec271597bb0c07606ceddba1e111f = L.marker(
+                [34.69296666666666, 3.1933916666666664],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_9354ec167cf1e8eaba3d0ae835e35c32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4bd1f9b6dacc11dc51a6634428e030b5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fbe3f6e39ddc9f33f23309353bae64a4 = $(`<div id="html_fbe3f6e39ddc9f33f23309353bae64a4" style="width: 100.0%; height: 100.0%;">     <b>IMG_2424_ecorce_pin.JPG</b><br>     Type: Insect<br>     Date: 2026-01-12<br>     Time: 17:27:21<br>     Latitude: 34.692967<br>     Longitude: 3.193392<br>     Altitude: 1163.09 m<br>     Note: <br>              <a href="images_insects/IMG_2424_ecorce_pin.JPG" target="_blank">         <img src="images_insects/IMG_2424_ecorce_pin.JPG" width="160">         </a>              </div>`)[0];
+                popup_4bd1f9b6dacc11dc51a6634428e030b5.setContent(html_fbe3f6e39ddc9f33f23309353bae64a4);
+            
+        
+
+        marker_0baec271597bb0c07606ceddba1e111f.bindPopup(popup_4bd1f9b6dacc11dc51a6634428e030b5)
+        ;
+
+        
+    
+    
+            marker_0baec271597bb0c07606ceddba1e111f.bindTooltip(
+                `<div>
+                     Insect — IMG_2424_ecorce_pin.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0baec271597bb0c07606ceddba1e111f.setIcon(icon_9354ec167cf1e8eaba3d0ae835e35c32);
+            
+    
+            var marker_aad4a934029ae3477305873a4600a846 = L.marker(
+                [36.770802777777774, 5.899324999999999],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_493f7c90307e2560cb508bb662066d35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d15e97afd677bf7f7fdc22a40dc84b6f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1251f1f759d541528d79e804e4d72d92 = $(`<div id="html_1251f1f759d541528d79e804e4d72d92" style="width: 100.0%; height: 100.0%;">     <b>IMG_9991_bee.jpeg</b><br>     Type: Insect<br>     Date: 2025-09-20<br>     Time: 07:06:17<br>     Latitude: 36.770803<br>     Longitude: 5.899325<br>     Altitude: 57.0 m<br>     Note: <br>              <a href="images_insects/IMG_9991_bee.jpeg" target="_blank">         <img src="images_insects/IMG_9991_bee.jpeg" width="160">         </a>              </div>`)[0];
+                popup_d15e97afd677bf7f7fdc22a40dc84b6f.setContent(html_1251f1f759d541528d79e804e4d72d92);
+            
+        
+
+        marker_aad4a934029ae3477305873a4600a846.bindPopup(popup_d15e97afd677bf7f7fdc22a40dc84b6f)
+        ;
+
+        
+    
+    
+            marker_aad4a934029ae3477305873a4600a846.bindTooltip(
+                `<div>
+                     Insect — IMG_9991_bee.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aad4a934029ae3477305873a4600a846.setIcon(icon_493f7c90307e2560cb508bb662066d35);
+            
+    
+            var marker_0f0c5b80c60f95de8939e79f6c17fb46 = L.marker(
+                [34.48518888888889, 2.9427361111111114],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_2ed83ab0571442a3bfd931400803a79d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e058ed687fe862edea1a61725761b6a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ce7fae898b285ad02a148d442bd2ac12 = $(`<div id="html_ce7fae898b285ad02a148d442bd2ac12" style="width: 100.0%; height: 100.0%;">     <b>IMG_8098_cooked_rabit.jpg</b><br>     Type: Insect<br>     Date: 2023-10-05<br>     Time: 21:48:51<br>     Latitude: 34.485189<br>     Longitude: 2.942736<br>     Altitude: 1443.01 m<br>     Note: <br>              <a href="images_insects/IMG_8098_cooked_rabit.jpg" target="_blank">         <img src="images_insects/IMG_8098_cooked_rabit.jpg" width="160">         </a>              </div>`)[0];
+                popup_9e058ed687fe862edea1a61725761b6a.setContent(html_ce7fae898b285ad02a148d442bd2ac12);
+            
+        
+
+        marker_0f0c5b80c60f95de8939e79f6c17fb46.bindPopup(popup_9e058ed687fe862edea1a61725761b6a)
+        ;
+
+        
+    
+    
+            marker_0f0c5b80c60f95de8939e79f6c17fb46.bindTooltip(
+                `<div>
+                     Insect — IMG_8098_cooked_rabit.jpg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f0c5b80c60f95de8939e79f6c17fb46.setIcon(icon_2ed83ab0571442a3bfd931400803a79d);
+            
+    
+            var marker_f73fa3f276e84158ef0d2ce51842bfa9 = L.marker(
+                [34.69295833333333, 3.1933249999999997],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_140d8fe677cd64c92c0daf8cbdc15a9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b5da1882d9192999af702b2583b16381 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_199915e8a77d27b078d7823f6202be58 = $(`<div id="html_199915e8a77d27b078d7823f6202be58" style="width: 100.0%; height: 100.0%;">     <b>IMG_2425_pin_allep.JPG</b><br>     Type: Insect<br>     Date: 2026-01-12<br>     Time: 17:27:39<br>     Latitude: 34.692958<br>     Longitude: 3.193325<br>     Altitude: 1158.61 m<br>     Note: <br>              <a href="images_insects/IMG_2425_pin_allep.JPG" target="_blank">         <img src="images_insects/IMG_2425_pin_allep.JPG" width="160">         </a>              </div>`)[0];
+                popup_b5da1882d9192999af702b2583b16381.setContent(html_199915e8a77d27b078d7823f6202be58);
+            
+        
+
+        marker_f73fa3f276e84158ef0d2ce51842bfa9.bindPopup(popup_b5da1882d9192999af702b2583b16381)
+        ;
+
+        
+    
+    
+            marker_f73fa3f276e84158ef0d2ce51842bfa9.bindTooltip(
+                `<div>
+                     Insect — IMG_2425_pin_allep.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f73fa3f276e84158ef0d2ce51842bfa9.setIcon(icon_140d8fe677cd64c92c0daf8cbdc15a9c);
+            
+    
+            var marker_6a1a5d325822015693ced456cccf38b1 = L.marker(
+                [36.76603055555555, 3.0521749999999996],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_8bf309486f711a9de70137112d50d18b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c3b9f5c613ea9aed305864fb15e732f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_55fa8dadf8f6040747db2edf12dc2048 = $(`<div id="html_55fa8dadf8f6040747db2edf12dc2048" style="width: 100.0%; height: 100.0%;">     <b>IMG_2307_perruche.jpg</b><br>     Type: Insect<br>     Date: 2024-08-25<br>     Time: 18:25:44<br>     Latitude: 36.766031<br>     Longitude: 3.052175<br>     Altitude: 48.91 m<br>     Note: <br>              <a href="images_insects/IMG_2307_perruche.jpg" target="_blank">         <img src="images_insects/IMG_2307_perruche.jpg" width="160">         </a>              </div>`)[0];
+                popup_2c3b9f5c613ea9aed305864fb15e732f.setContent(html_55fa8dadf8f6040747db2edf12dc2048);
+            
+        
+
+        marker_6a1a5d325822015693ced456cccf38b1.bindPopup(popup_2c3b9f5c613ea9aed305864fb15e732f)
+        ;
+
+        
+    
+    
+            marker_6a1a5d325822015693ced456cccf38b1.bindTooltip(
+                `<div>
+                     Insect — IMG_2307_perruche.jpg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a1a5d325822015693ced456cccf38b1.setIcon(icon_8bf309486f711a9de70137112d50d18b);
+            
+    
+            var marker_6f63526be3d03c9726be44a1486b606c = L.marker(
+                [36.770783333333334, 5.899461111111111],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_9c55acc2675d8fc9f3025c4eb8d75886 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bug",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7d92e7e4019204f267f92865e061b23 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6ecddffbee6b80f0f660385028933f1b = $(`<div id="html_6ecddffbee6b80f0f660385028933f1b" style="width: 100.0%; height: 100.0%;">     <b>IMG_2956_resine.jpeg</b><br>     Type: Insect<br>     Date: 2024-09-07<br>     Time: 07:09:48<br>     Latitude: 36.770783<br>     Longitude: 5.899461<br>     Altitude: 59.9 m<br>     Note: <br>              <a href="images_insects/IMG_2956_resine.jpeg" target="_blank">         <img src="images_insects/IMG_2956_resine.jpeg" width="160">         </a>              </div>`)[0];
+                popup_f7d92e7e4019204f267f92865e061b23.setContent(html_6ecddffbee6b80f0f660385028933f1b);
+            
+        
+
+        marker_6f63526be3d03c9726be44a1486b606c.bindPopup(popup_f7d92e7e4019204f267f92865e061b23)
+        ;
+
+        
+    
+    
+            marker_6f63526be3d03c9726be44a1486b606c.bindTooltip(
+                `<div>
+                     Insect — IMG_2956_resine.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6f63526be3d03c9726be44a1486b606c.setIcon(icon_9c55acc2675d8fc9f3025c4eb8d75886);
+            
+    
+            var marker_2b3f62df388324bc2838cd5c6cf1c792 = L.marker(
+                [36.765683333333335, 5.926527777777778],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_2c7fd1adf6ab13399e9569ae61ec9d67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e0e0fa8071484def75026e7f7477b62 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_db4f6cb83536a95dea21a07ec284e363 = $(`<div id="html_db4f6cb83536a95dea21a07ec284e363" style="width: 100.0%; height: 100.0%;">     <b>IMG_2726.jpeg</b><br>     Type: Flora<br>     Date: 2024-09-03<br>     Time: 18:31:51<br>     Latitude: 36.765683<br>     Longitude: 5.926528<br>     Altitude: 29.2 m<br>     Note: <br>              <a href="images_flora/IMG_2726.jpeg" target="_blank">         <img src="images_flora/IMG_2726.jpeg" width="160">         </a>              </div>`)[0];
+                popup_4e0e0fa8071484def75026e7f7477b62.setContent(html_db4f6cb83536a95dea21a07ec284e363);
+            
+        
+
+        marker_2b3f62df388324bc2838cd5c6cf1c792.bindPopup(popup_4e0e0fa8071484def75026e7f7477b62)
+        ;
+
+        
+    
+    
+            marker_2b3f62df388324bc2838cd5c6cf1c792.bindTooltip(
+                `<div>
+                     Flora — IMG_2726.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2b3f62df388324bc2838cd5c6cf1c792.setIcon(icon_2c7fd1adf6ab13399e9569ae61ec9d67);
+            
+    
+            var marker_0889af8324de623a5982709163d41bc7 = L.marker(
+                [34.69766944444444, 3.2696972222222223],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_6692a0e4ddc8e821b206afccd578cc51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9f66d005299c7ae614676b583ed8e23 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9a966715cf3ce094319636aafc8b4801 = $(`<div id="html_9a966715cf3ce094319636aafc8b4801" style="width: 100.0%; height: 100.0%;">     <b>IMG_7284.jpeg</b><br>     Type: Flora<br>     Date: 2025-05-23<br>     Time: 12:12:31<br>     Latitude: 34.697669<br>     Longitude: 3.269697<br>     Altitude: 1167.2 m<br>     Note: <br>              <a href="images_flora/IMG_7284.jpeg" target="_blank">         <img src="images_flora/IMG_7284.jpeg" width="160">         </a>              </div>`)[0];
+                popup_a9f66d005299c7ae614676b583ed8e23.setContent(html_9a966715cf3ce094319636aafc8b4801);
+            
+        
+
+        marker_0889af8324de623a5982709163d41bc7.bindPopup(popup_a9f66d005299c7ae614676b583ed8e23)
+        ;
+
+        
+    
+    
+            marker_0889af8324de623a5982709163d41bc7.bindTooltip(
+                `<div>
+                     Flora — IMG_7284.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0889af8324de623a5982709163d41bc7.setIcon(icon_6692a0e4ddc8e821b206afccd578cc51);
+            
+    
+            var marker_51ee056d74108212a55a63d83ff82491 = L.marker(
+                [36.71987222222222, 3.1086805555555554],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_f4b0b9403c09d51fef1b867b16dab2d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d4a23a19e681866460e171a6b10046a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e82239e73b95e33d44a7c23baa20720d = $(`<div id="html_e82239e73b95e33d44a7c23baa20720d" style="width: 100.0%; height: 100.0%;">     <b>IMG_6211.jpeg</b><br>     Type: Flora<br>     Date: 2025-03-16<br>     Time: 15:20:04<br>     Latitude: 36.719872<br>     Longitude: 3.108681<br>     Altitude: 53.7 m<br>     Note: <br>              <a href="images_flora/IMG_6211.jpeg" target="_blank">         <img src="images_flora/IMG_6211.jpeg" width="160">         </a>              </div>`)[0];
+                popup_0d4a23a19e681866460e171a6b10046a.setContent(html_e82239e73b95e33d44a7c23baa20720d);
+            
+        
+
+        marker_51ee056d74108212a55a63d83ff82491.bindPopup(popup_0d4a23a19e681866460e171a6b10046a)
+        ;
+
+        
+    
+    
+            marker_51ee056d74108212a55a63d83ff82491.bindTooltip(
+                `<div>
+                     Flora — IMG_6211.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_51ee056d74108212a55a63d83ff82491.setIcon(icon_f4b0b9403c09d51fef1b867b16dab2d1);
+            
+    
+            var marker_10567169a7ddea430caa6a99e1fb9e76 = L.marker(
+                [36.770783333333334, 5.899461111111111],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_623ea871979c5a4406fadceaf11d1d60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_012b9057284eeee130b170b5552eb21b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d776c9acf495994865c57fd0d38cf6ca = $(`<div id="html_d776c9acf495994865c57fd0d38cf6ca" style="width: 100.0%; height: 100.0%;">     <b>IMG_2956.jpeg</b><br>     Type: Flora<br>     Date: 2024-09-07<br>     Time: 07:09:48<br>     Latitude: 36.770783<br>     Longitude: 5.899461<br>     Altitude: 59.9 m<br>     Note: <br>              <a href="images_flora/IMG_2956.jpeg" target="_blank">         <img src="images_flora/IMG_2956.jpeg" width="160">         </a>              </div>`)[0];
+                popup_012b9057284eeee130b170b5552eb21b.setContent(html_d776c9acf495994865c57fd0d38cf6ca);
+            
+        
+
+        marker_10567169a7ddea430caa6a99e1fb9e76.bindPopup(popup_012b9057284eeee130b170b5552eb21b)
+        ;
+
+        
+    
+    
+            marker_10567169a7ddea430caa6a99e1fb9e76.bindTooltip(
+                `<div>
+                     Flora — IMG_2956.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10567169a7ddea430caa6a99e1fb9e76.setIcon(icon_623ea871979c5a4406fadceaf11d1d60);
+            
+    
+            var marker_4a5b4852884ccdd216c822f83590614b = L.marker(
+                [36.784508333333335, 5.9522055555555555],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_57a97f0cf3d61c224d212404ac82ef35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6dbb963669a81863622a3744b2b51e63 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_44ce36db31dfe350415fabc8c32c632f = $(`<div id="html_44ce36db31dfe350415fabc8c32c632f" style="width: 100.0%; height: 100.0%;">     <b>IMG_3720.jpeg</b><br>     Type: Flora<br>     Date: 2024-09-17<br>     Time: 12:49:41<br>     Latitude: 36.784508<br>     Longitude: 5.952206<br>     Altitude: 33.7 m<br>     Note: <br>              <a href="images_flora/IMG_3720.jpeg" target="_blank">         <img src="images_flora/IMG_3720.jpeg" width="160">         </a>              </div>`)[0];
+                popup_6dbb963669a81863622a3744b2b51e63.setContent(html_44ce36db31dfe350415fabc8c32c632f);
+            
+        
+
+        marker_4a5b4852884ccdd216c822f83590614b.bindPopup(popup_6dbb963669a81863622a3744b2b51e63)
+        ;
+
+        
+    
+    
+            marker_4a5b4852884ccdd216c822f83590614b.bindTooltip(
+                `<div>
+                     Flora — IMG_3720.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a5b4852884ccdd216c822f83590614b.setIcon(icon_57a97f0cf3d61c224d212404ac82ef35);
+            
+    
+            var marker_68be281624e3bfcaf0b750d9e4d06b71 = L.marker(
+                [36.723480555555554, 3.128947222222222],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_3407d3ef6199a728e7a9a3480ac639f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33f456c8d1ae941789cdca4e96666888 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9ac05234811f1633115779afb4a98a7c = $(`<div id="html_9ac05234811f1633115779afb4a98a7c" style="width: 100.0%; height: 100.0%;">     <b>IMG_7889.jpeg</b><br>     Type: Flora<br>     Date: 2023-09-27<br>     Time: 17:44:27<br>     Latitude: 36.723481<br>     Longitude: 3.128947<br>     Altitude: 45.3 m<br>     Note: <br>              <a href="images_flora/IMG_7889.jpeg" target="_blank">         <img src="images_flora/IMG_7889.jpeg" width="160">         </a>              </div>`)[0];
+                popup_33f456c8d1ae941789cdca4e96666888.setContent(html_9ac05234811f1633115779afb4a98a7c);
+            
+        
+
+        marker_68be281624e3bfcaf0b750d9e4d06b71.bindPopup(popup_33f456c8d1ae941789cdca4e96666888)
+        ;
+
+        
+    
+    
+            marker_68be281624e3bfcaf0b750d9e4d06b71.bindTooltip(
+                `<div>
+                     Flora — IMG_7889.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68be281624e3bfcaf0b750d9e4d06b71.setIcon(icon_3407d3ef6199a728e7a9a3480ac639f1);
+            
+    
+            var marker_a8029953821e0fa1fa77cf72e3c08ab9 = L.marker(
+                [36.77070277777778, 5.899419444444444],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_9e50992977b7f91f01cc008161945b02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a28658c7dcfebd36eaa0f1441a0ba30 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_66d1f8fa0214c6ded465118826e93bab = $(`<div id="html_66d1f8fa0214c6ded465118826e93bab" style="width: 100.0%; height: 100.0%;">     <b>IMG_2644.jpeg</b><br>     Type: Flora<br>     Date: 2024-09-02<br>     Time: 06:53:57<br>     Latitude: 36.770703<br>     Longitude: 5.899419<br>     Altitude: 58.4 m<br>     Note: <br>              <a href="images_flora/IMG_2644.jpeg" target="_blank">         <img src="images_flora/IMG_2644.jpeg" width="160">         </a>              </div>`)[0];
+                popup_3a28658c7dcfebd36eaa0f1441a0ba30.setContent(html_66d1f8fa0214c6ded465118826e93bab);
+            
+        
+
+        marker_a8029953821e0fa1fa77cf72e3c08ab9.bindPopup(popup_3a28658c7dcfebd36eaa0f1441a0ba30)
+        ;
+
+        
+    
+    
+            marker_a8029953821e0fa1fa77cf72e3c08ab9.bindTooltip(
+                `<div>
+                     Flora — IMG_2644.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a8029953821e0fa1fa77cf72e3c08ab9.setIcon(icon_9e50992977b7f91f01cc008161945b02);
+            
+    
+            var marker_7ba82b7ee984ea7f0f099930cb398b2b = L.marker(
+                [36.770155555555554, 5.921511111111111],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_893b44dc2bd7f16f7638ba5158c56a0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59d358d80056bb27afdc521844ec7c09 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8c776319b95f80215690009319fd1614 = $(`<div id="html_8c776319b95f80215690009319fd1614" style="width: 100.0%; height: 100.0%;">     <b>IMG_5508_leaves1.jpeg</b><br>     Type: Flora<br>     Date: 2025-01-01<br>     Time: 11:21:45<br>     Latitude: 36.770156<br>     Longitude: 5.921511<br>     Altitude: 25.5 m<br>     Note: <br>              <a href="images_flora/IMG_5508_leaves1.jpeg" target="_blank">         <img src="images_flora/IMG_5508_leaves1.jpeg" width="160">         </a>              </div>`)[0];
+                popup_59d358d80056bb27afdc521844ec7c09.setContent(html_8c776319b95f80215690009319fd1614);
+            
+        
+
+        marker_7ba82b7ee984ea7f0f099930cb398b2b.bindPopup(popup_59d358d80056bb27afdc521844ec7c09)
+        ;
+
+        
+    
+    
+            marker_7ba82b7ee984ea7f0f099930cb398b2b.bindTooltip(
+                `<div>
+                     Flora — IMG_5508_leaves1.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ba82b7ee984ea7f0f099930cb398b2b.setIcon(icon_893b44dc2bd7f16f7638ba5158c56a0a);
+            
+    
+            var marker_954417d6595003a7aab66480f4da5faf = L.marker(
+                [34.67361388888889, 3.1177472222222224],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_67cd24fdebe55d452ff2f8fea82a3861 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb3a5f6deb9481f6dbb403510efe4d04 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_651349408dac12b19ea345df718690d9 = $(`<div id="html_651349408dac12b19ea345df718690d9" style="width: 100.0%; height: 100.0%;">     <b>IMG_5114_fruit1.jpeg</b><br>     Type: Flora<br>     Date: 2023-05-31<br>     Time: 16:16:38<br>     Latitude: 34.673614<br>     Longitude: 3.117747<br>     Altitude: 1221.1 m<br>     Note: <br>              <a href="images_flora/IMG_5114_fruit1.jpeg" target="_blank">         <img src="images_flora/IMG_5114_fruit1.jpeg" width="160">         </a>              </div>`)[0];
+                popup_bb3a5f6deb9481f6dbb403510efe4d04.setContent(html_651349408dac12b19ea345df718690d9);
+            
+        
+
+        marker_954417d6595003a7aab66480f4da5faf.bindPopup(popup_bb3a5f6deb9481f6dbb403510efe4d04)
+        ;
+
+        
+    
+    
+            marker_954417d6595003a7aab66480f4da5faf.bindTooltip(
+                `<div>
+                     Flora — IMG_5114_fruit1.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_954417d6595003a7aab66480f4da5faf.setIcon(icon_67cd24fdebe55d452ff2f8fea82a3861);
+            
+    
+            var marker_83badd04fa803c234a0482fc32cc1f4a = L.marker(
+                [34.69781944444444, 3.268927777777778],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_ef749dd13d80d2d18504334670522b2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee5b00dc44018d512cc76ac1267b671c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_47950f277c98b5a296801fbabcddc2a0 = $(`<div id="html_47950f277c98b5a296801fbabcddc2a0" style="width: 100.0%; height: 100.0%;">     <b>IMG_7278.jpeg</b><br>     Type: Flora<br>     Date: 2025-05-23<br>     Time: 11:58:25<br>     Latitude: 34.697819<br>     Longitude: 3.268928<br>     Altitude: 1177.4 m<br>     Note: <br>              <a href="images_flora/IMG_7278.jpeg" target="_blank">         <img src="images_flora/IMG_7278.jpeg" width="160">         </a>              </div>`)[0];
+                popup_ee5b00dc44018d512cc76ac1267b671c.setContent(html_47950f277c98b5a296801fbabcddc2a0);
+            
+        
+
+        marker_83badd04fa803c234a0482fc32cc1f4a.bindPopup(popup_ee5b00dc44018d512cc76ac1267b671c)
+        ;
+
+        
+    
+    
+            marker_83badd04fa803c234a0482fc32cc1f4a.bindTooltip(
+                `<div>
+                     Flora — IMG_7278.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83badd04fa803c234a0482fc32cc1f4a.setIcon(icon_ef749dd13d80d2d18504334670522b2a);
+            
+    
+            var marker_aa0edcbe8c1c2083708a58a8f727591c = L.marker(
+                [35.09832777777778, 4.2683277777777775],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_c400a314b0dd768e21e67978ab7343af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31598731f9df4c5f45fb684da050e233 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_139152cf1f9c42768eaf41c19e8f417e = $(`<div id="html_139152cf1f9c42768eaf41c19e8f417e" style="width: 100.0%; height: 100.0%;">     <b>IMG_1206.jpeg</b><br>     Type: Flora<br>     Date: 2022-10-14<br>     Time: 07:20:50<br>     Latitude: 35.098328<br>     Longitude: 4.268328<br>     Altitude: 850.2 m<br>     Note: <br>              <a href="images_flora/IMG_1206.jpeg" target="_blank">         <img src="images_flora/IMG_1206.jpeg" width="160">         </a>              </div>`)[0];
+                popup_31598731f9df4c5f45fb684da050e233.setContent(html_139152cf1f9c42768eaf41c19e8f417e);
+            
+        
+
+        marker_aa0edcbe8c1c2083708a58a8f727591c.bindPopup(popup_31598731f9df4c5f45fb684da050e233)
+        ;
+
+        
+    
+    
+            marker_aa0edcbe8c1c2083708a58a8f727591c.bindTooltip(
+                `<div>
+                     Flora — IMG_1206.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa0edcbe8c1c2083708a58a8f727591c.setIcon(icon_c400a314b0dd768e21e67978ab7343af);
+            
+    
+            var marker_e14a2dec00e32df8be558b192aeab578 = L.marker(
+                [34.80300833333333, 2.8388722222222222],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_8d239266178092373455325afecd9f7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c64415c67bdf0a5a62fffe1c2e86889 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_616e2c56cfdbdfafe3739edea955877d = $(`<div id="html_616e2c56cfdbdfafe3739edea955877d" style="width: 100.0%; height: 100.0%;">     <b>IMG_8509.JPG</b><br>     Type: Flora<br>     Date: 2023-10-28<br>     Time: 15:59:46<br>     Latitude: 34.803008<br>     Longitude: 2.838872<br>     Altitude: 890.01 m<br>     Note: <br>              <a href="images_flora/IMG_8509.JPG" target="_blank">         <img src="images_flora/IMG_8509.JPG" width="160">         </a>              </div>`)[0];
+                popup_3c64415c67bdf0a5a62fffe1c2e86889.setContent(html_616e2c56cfdbdfafe3739edea955877d);
+            
+        
+
+        marker_e14a2dec00e32df8be558b192aeab578.bindPopup(popup_3c64415c67bdf0a5a62fffe1c2e86889)
+        ;
+
+        
+    
+    
+            marker_e14a2dec00e32df8be558b192aeab578.bindTooltip(
+                `<div>
+                     Flora — IMG_8509.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e14a2dec00e32df8be558b192aeab578.setIcon(icon_8d239266178092373455325afecd9f7a);
+            
+    
+            var marker_466cb599b811c6ef8bf31d771b05482f = L.marker(
+                [34.69296388888888, 3.1933805555555552],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_66db3a70e6ac1e64db7a222db1699004 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_905f813636f9fbb07736980435261827 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_5d6df535fdce47a9895884f552e6018a = $(`<div id="html_5d6df535fdce47a9895884f552e6018a" style="width: 100.0%; height: 100.0%;">     <b>IMG_2423.JPG</b><br>     Type: Flora<br>     Date: 2026-01-12<br>     Time: 17:27:09<br>     Latitude: 34.692964<br>     Longitude: 3.193381<br>     Altitude: 1161.42 m<br>     Note: <br>              <a href="images_flora/IMG_2423.JPG" target="_blank">         <img src="images_flora/IMG_2423.JPG" width="160">         </a>              </div>`)[0];
+                popup_905f813636f9fbb07736980435261827.setContent(html_5d6df535fdce47a9895884f552e6018a);
+            
+        
+
+        marker_466cb599b811c6ef8bf31d771b05482f.bindPopup(popup_905f813636f9fbb07736980435261827)
+        ;
+
+        
+    
+    
+            marker_466cb599b811c6ef8bf31d771b05482f.bindTooltip(
+                `<div>
+                     Flora — IMG_2423.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_466cb599b811c6ef8bf31d771b05482f.setIcon(icon_66db3a70e6ac1e64db7a222db1699004);
+            
+    
+            var marker_26c35d430e53e4ea5c7dbb906e3bb311 = L.marker(
+                [36.40442222222222, 10.644030555555554],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_239fdd3bac2a903b11d540daba05f73c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2ef72d1720989ed560dc3d69cb348eb3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f392289dfd5876b9c45b7275cf18c138 = $(`<div id="html_f392289dfd5876b9c45b7275cf18c138" style="width: 100.0%; height: 100.0%;">     <b>IMG_6697.jpeg</b><br>     Type: Flora<br>     Date: 2025-04-30<br>     Time: 09:19:50<br>     Latitude: 36.404422<br>     Longitude: 10.644031<br>     Altitude: 13.2 m<br>     Note: <br>              <a href="images_flora/IMG_6697.jpeg" target="_blank">         <img src="images_flora/IMG_6697.jpeg" width="160">         </a>              </div>`)[0];
+                popup_2ef72d1720989ed560dc3d69cb348eb3.setContent(html_f392289dfd5876b9c45b7275cf18c138);
+            
+        
+
+        marker_26c35d430e53e4ea5c7dbb906e3bb311.bindPopup(popup_2ef72d1720989ed560dc3d69cb348eb3)
+        ;
+
+        
+    
+    
+            marker_26c35d430e53e4ea5c7dbb906e3bb311.bindTooltip(
+                `<div>
+                     Flora — IMG_6697.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26c35d430e53e4ea5c7dbb906e3bb311.setIcon(icon_239fdd3bac2a903b11d540daba05f73c);
+            
+    
+            var marker_f73f803e1fc8cf365217dac53d4116c7 = L.marker(
+                [36.723416666666665, 3.128972222222222],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_ee03bffb93caed33ffae3c1fbd0ee342 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_44a2c3adb29d9007f86447dd085f2008 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_13390f714e61dee750ecd94c7632793c = $(`<div id="html_13390f714e61dee750ecd94c7632793c" style="width: 100.0%; height: 100.0%;">     <b>IMG_5042_flower1.jpeg</b><br>     Type: Flora<br>     Date: 2023-05-28<br>     Time: 09:39:06<br>     Latitude: 36.723417<br>     Longitude: 3.128972<br>     Altitude: 42.5 m<br>     Note: <br>              <a href="images_flora/IMG_5042_flower1.jpeg" target="_blank">         <img src="images_flora/IMG_5042_flower1.jpeg" width="160">         </a>              </div>`)[0];
+                popup_44a2c3adb29d9007f86447dd085f2008.setContent(html_13390f714e61dee750ecd94c7632793c);
+            
+        
+
+        marker_f73f803e1fc8cf365217dac53d4116c7.bindPopup(popup_44a2c3adb29d9007f86447dd085f2008)
+        ;
+
+        
+    
+    
+            marker_f73f803e1fc8cf365217dac53d4116c7.bindTooltip(
+                `<div>
+                     Flora — IMG_5042_flower1.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f73f803e1fc8cf365217dac53d4116c7.setIcon(icon_ee03bffb93caed33ffae3c1fbd0ee342);
+            
+    
+            var marker_247cc50de4b7ef00fe9c330426776d00 = L.marker(
+                [34.69295833333333, 3.1933249999999997],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_8f0b8cb4bdf38518d2b8313391a176ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c89c54192d4d9bb6589eb458df41e1b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6efd46576824340ba7341d3b92cc6ffc = $(`<div id="html_6efd46576824340ba7341d3b92cc6ffc" style="width: 100.0%; height: 100.0%;">     <b>IMG_2425.JPG</b><br>     Type: Flora<br>     Date: 2026-01-12<br>     Time: 17:27:39<br>     Latitude: 34.692958<br>     Longitude: 3.193325<br>     Altitude: 1158.61 m<br>     Note: <br>              <a href="images_flora/IMG_2425.JPG" target="_blank">         <img src="images_flora/IMG_2425.JPG" width="160">         </a>              </div>`)[0];
+                popup_3c89c54192d4d9bb6589eb458df41e1b.setContent(html_6efd46576824340ba7341d3b92cc6ffc);
+            
+        
+
+        marker_247cc50de4b7ef00fe9c330426776d00.bindPopup(popup_3c89c54192d4d9bb6589eb458df41e1b)
+        ;
+
+        
+    
+    
+            marker_247cc50de4b7ef00fe9c330426776d00.bindTooltip(
+                `<div>
+                     Flora — IMG_2425.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_247cc50de4b7ef00fe9c330426776d00.setIcon(icon_8f0b8cb4bdf38518d2b8313391a176ef);
+            
+    
+            var marker_9fa661e9d0229dbcd353521019d18a68 = L.marker(
+                [36.763358333333336, 5.908261111111112],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_f3e31cdfaa3c5bd11cda8f9ab5746497 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20950997608722d4d48ea33986dc14e9 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fd70583f2c3ab4e7eb8160cf8ab1a2f0 = $(`<div id="html_fd70583f2c3ab4e7eb8160cf8ab1a2f0" style="width: 100.0%; height: 100.0%;">     <b>IMG_3122.jpeg</b><br>     Type: Flora<br>     Date: 2024-09-09<br>     Time: 12:04:35<br>     Latitude: 36.763358<br>     Longitude: 5.908261<br>     Altitude: 34.8 m<br>     Note: <br>              <a href="images_flora/IMG_3122.jpeg" target="_blank">         <img src="images_flora/IMG_3122.jpeg" width="160">         </a>              </div>`)[0];
+                popup_20950997608722d4d48ea33986dc14e9.setContent(html_fd70583f2c3ab4e7eb8160cf8ab1a2f0);
+            
+        
+
+        marker_9fa661e9d0229dbcd353521019d18a68.bindPopup(popup_20950997608722d4d48ea33986dc14e9)
+        ;
+
+        
+    
+    
+            marker_9fa661e9d0229dbcd353521019d18a68.bindTooltip(
+                `<div>
+                     Flora — IMG_3122.jpeg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9fa661e9d0229dbcd353521019d18a68.setIcon(icon_f3e31cdfaa3c5bd11cda8f9ab5746497);
+            
+    
+            var marker_0f4a631a369b671c2b714eab15e51527 = L.marker(
+                [36.824647222222225, 5.767483333333333],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_e740a718db1f87adde693b14989c7715 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_990f73c2f72866f07cdc33bba077e59a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fc5cfadf62e6c5a23ff4d97abb379122 = $(`<div id="html_fc5cfadf62e6c5a23ff4d97abb379122" style="width: 100.0%; height: 100.0%;">     <b>IMG_20240922_170719_573.jpg</b><br>     Type: Flora<br>     Date: <br>     Time: <br>     Latitude: 36.824647<br>     Longitude: 5.767483<br>     Altitude:  m<br>     Note: <br>              <a href="images_flora/IMG_20240922_170719_573.jpg" target="_blank">         <img src="images_flora/IMG_20240922_170719_573.jpg" width="160">         </a>              </div>`)[0];
+                popup_990f73c2f72866f07cdc33bba077e59a.setContent(html_fc5cfadf62e6c5a23ff4d97abb379122);
+            
+        
+
+        marker_0f4a631a369b671c2b714eab15e51527.bindPopup(popup_990f73c2f72866f07cdc33bba077e59a)
+        ;
+
+        
+    
+    
+            marker_0f4a631a369b671c2b714eab15e51527.bindTooltip(
+                `<div>
+                     Flora — IMG_20240922_170719_573.jpg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f4a631a369b671c2b714eab15e51527.setIcon(icon_e740a718db1f87adde693b14989c7715);
+            
+    
+            var marker_69fac425efc96947e4dfac2e156ee7c1 = L.marker(
+                [34.69296666666666, 3.1933916666666664],
+                {
+}
+            ).addTo(map_8aa18867c80410410bbed2a05f706a25);
+        
+    
+            var icon_944aa789ddc0aac3b45a9ced05d8eb4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78df0698ae1857aeb9a577f6a3ef7c43 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f77e5fa9b79495716f1c91e94a442497 = $(`<div id="html_f77e5fa9b79495716f1c91e94a442497" style="width: 100.0%; height: 100.0%;">     <b>IMG_2424.JPG</b><br>     Type: Flora<br>     Date: 2026-01-12<br>     Time: 17:27:21<br>     Latitude: 34.692967<br>     Longitude: 3.193392<br>     Altitude: 1163.09 m<br>     Note: <br>              <a href="images_flora/IMG_2424.JPG" target="_blank">         <img src="images_flora/IMG_2424.JPG" width="160">         </a>              </div>`)[0];
+                popup_78df0698ae1857aeb9a577f6a3ef7c43.setContent(html_f77e5fa9b79495716f1c91e94a442497);
+            
+        
+
+        marker_69fac425efc96947e4dfac2e156ee7c1.bindPopup(popup_78df0698ae1857aeb9a577f6a3ef7c43)
+        ;
+
+        
+    
+    
+            marker_69fac425efc96947e4dfac2e156ee7c1.bindTooltip(
+                `<div>
+                     Flora — IMG_2424.JPG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_69fac425efc96947e4dfac2e156ee7c1.setIcon(icon_944aa789ddc0aac3b45a9ced05d8eb4b);
+            
+</script>
+</html>
